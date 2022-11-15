@@ -7,6 +7,6 @@ greetings:
   controller: App\Controller\twigcont::index
 
 
-  greetings2:
+greetings2:
   path: /introduction
   controller: App\Controller\twigcont::index2
