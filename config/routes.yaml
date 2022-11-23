@@ -4,9 +4,9 @@
 
 greetings:
   path: /
-  controller: App\Controller\twigcont::index
+  controller: App\Controller\GreetingsController::index
 
 
 greetings2:
   path: /introduction
-  controller: App\Controller\twigcont::index2
+  controller: App\Controller\GreetingsController::index2
