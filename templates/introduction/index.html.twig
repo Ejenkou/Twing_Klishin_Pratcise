@@ -16,7 +16,7 @@
 
             <!-- alert -->
 
-            <div class="text-center">
+            <div class="text-center d-flex justify-content-center">
               Заполните все необходимые поля, обозначенные символом "*"
             </div>
           </div>
@@ -26,19 +26,19 @@
 
             <!-- column1 -->
 
-        <div class="col">
+        <div class="col text-center">
 
             <!-- input with choosing file:  jpg/png  -->  
 
             <div class="mb-3 col-12 col-md-auto form-check-inline">
-                <label>● Постер фильма*: </label> 
+                <label> Постер фильма*: </label> 
                 <input class="form-control w-100" id="posterimage" name="image" required type="file" accept=".jpg,.png">
             </div>
 
             <!--input with film name-->
 
             <div class="mb-3 col-12 col-md-auto">
-                <label>● Название фильма*: </label>
+                <label> Название фильма*: </label>
                 <input id="fname" class="form-control w-50" name="fname" required type="text">
             </div>
 
@@ -51,27 +51,28 @@
             
              <!-- checkboxes: where is film shown -->
 
+
             <div class="mb-3 col-12 col-md-auto form-check-inline">
-                <label>● Где показывают: </label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="cinema1" id="tl" value=" Apollo Tallin, ">
-                <label class="form-check-label">Apollo Tallinn</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="cinema2" id="jv" value=" Apollo Johvi, ">
-                <label class="form-check-label">Apollo Johvi</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="cinema3" id="tr" value=" Apollo Tartu, ">
-                <label class="form-check-label">Apollo Tartu</label>
-              </div>
+              <label> Где показывают: </label>
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="tl" value=" Apollo Tallin, ">
+              <label class="form-check-label">Apollo Tallinn</label>
             </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="jv" value=" Apollo Johvi, ">
+              <label class="form-check-label">Apollo Johvi</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="tr" value=" Apollo Tartu, ">
+              <label class="form-check-label">Apollo Tartu</label>
+            </div>
+          </div>
             
 
              <!-- selection: film genre -->
 
             <div class="mb-3 col-12 col-md-auto">
-                <label>● Жанр фильма: </label>
+                <label> Жанр фильма: </label>
                 <label><select class="form-select text-center" name="Zanr">
                     <option id="hr" name="hr" value=" снимали в жанре Horror ">Хоррор</option>
                     <option id="bl" name="bl" value=" снимали в жанре Blockbuster ">Блокбастер</option>
@@ -84,24 +85,24 @@
 
          <!-- column2 -->
          
-        <div class="col">
+        <div class="col text-center">
 
 
              <!-- input with number type-->
              
             <div class="mb-3 col-12 col-md-auto">
-                <label>● Кассовые сборы:</label>
+                <label> Кассовые сборы:</label>
                 <input class="form-control text-center w-50" id="money" name="money" type="number" value="0">
             </div>
             <div class="mb-3 col-12 col-md-auto">
-                <label>● Количество посетивших:</label>
+                <label> Количество посетивших:</label>
                 <input class="form-control text-center w-50" id="views" name="views" type="number" value="0">
             </div>
 
             <!-- radio: film rating-->
 
             <div class="mb-3 col-12 col-md-auto form-check-inline">
-              <label>● Рейтинг: </label>
+              <label> Рейтинг: </label>
           <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="G" value=" с рейтингом G ">
               <label class="form-check-label">G</label>
@@ -122,16 +123,16 @@
 
              <!-- input with textarea: film description-->
 
-            <div class="mb-3 col-12 col-md-auto">
-                <label>● Описание фильма*:</label>
-                <textarea class="form-control w-50" name="descript" required id="descript"></textarea>
+            <div class="mb-3 col-12 col-md-auto text-center">
+                <label> Описание фильма*:</label>
+                <textarea class="form-control w-50 text-center" name="descript" required id="descript"></textarea>
             </div>
 
              <!-- button with submit -->
 
 
         </div>
-            <div class="mb-2 p-4 col-12 col-md-auto">
+            <div class="mb-2 p-4 col-12 col-md-auto text-center">
                 <button  type="submit" class="btn btn btn-dark"> Отправить </button>
             </div>
         </div>
