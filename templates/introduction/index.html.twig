@@ -4,7 +4,8 @@
 
 {% block body %}
 
-<body style="background-image: url('./images/film.jpg'); background-size: 100%;">
+<!--<body style="background-image: url('./images/film.jpg'); background-size: 100%;">-->
+<body>
     <!-- block -->
     <form action="methods.php" class="form-inline p-5" method="post" enctype="multipart/form-data">
     <div class="container border border-dark" style="background-color: white;">
@@ -29,32 +30,31 @@
         <div class="col text-center">
 
             <!-- input with choosing file:  jpg/png  -->  
-
-            <div class="mb-3 col-12 col-md-auto form-check-inline">
-                <label> Постер фильма*: </label> 
-                <input class="form-control w-100" id="posterimage" name="image" required type="file" accept=".jpg,.png">
+            <label> Постер фильма*: </label> 
+            <div class="mb-3 col-12 col-md-auto form-check-inline d-flex justify-content-center">
+                
+                <input class="form-control w-50 d-flex" id="posterimage" name="image" required type="file" accept=".jpg,.png">
             </div>
-
+          
             <!--input with film name-->
-
-            <div class="mb-3 col-12 col-md-auto">
-                <label> Название фильма*: </label>
-                <input id="fname" class="form-control w-50" name="fname" required type="text">
+            <label> Название фильма*: </label>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                
+                <input id="fname" class="form-control w-50 d-flex" name="fname" required type="text">
             </div>
 
             <!-- chekbox: is film still on cinema -->
 
             <div class="mb-3 col-12 col-md-auto form-switch form-check-inline form-check">
                 <label class="form-check-label">- Сейчас в кинотеатрах?</label>
-                <input type="checkbox" class="form-check-input" name="inthecinema" value="до сих пор показывают или ">
+                <input type="checkbox" class="form-check-input d-flex" name="inthecinema" value="до сих пор показывают или ">
             </div>
+            <br>
             
              <!-- checkboxes: where is film shown -->
-
-
-            <div class="mb-3 col-12 col-md-auto form-check-inline">
-              <label> Где показывают: </label>
-          <div class="form-check form-check-inline">
+            <label> Показ: </label>
+          <div class="mb-3 col-12 col-md-auto form-check-inline">
+            <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="tl" value=" Apollo Tallin, ">
               <label class="form-check-label">Apollo Tallinn</label>
             </div>
@@ -89,20 +89,19 @@
 
 
              <!-- input with number type-->
-             
-            <div class="mb-3 col-12 col-md-auto">
                 <label> Кассовые сборы:</label>
-                <input class="form-control text-center w-50" id="money" name="money" type="number" value="0">
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                
+                <input class="form-control text-center w-50 d-flex" id="money" name="money" type="number" value="0">
             </div>
-            <div class="mb-3 col-12 col-md-auto">
-                <label> Количество посетивших:</label>
-                <input class="form-control text-center w-50" id="views" name="views" type="number" value="0">
+            <label> Количество посетивших:</label>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                <input class="form-control text-center w-50 d-flex" id="views" name="views" type="number" value="0">
             </div>
 
             <!-- radio: film rating-->
-
-            <div class="mb-3 col-12 col-md-auto form-check-inline">
               <label> Рейтинг: </label>
+            <div class="mb-3 col-12 col-md-auto form-check-inline">
           <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="G" value=" с рейтингом G ">
               <label class="form-check-label">G</label>
@@ -122,10 +121,9 @@
           </div>
 
              <!-- input with textarea: film description-->
-
-            <div class="mb-3 col-12 col-md-auto text-center">
+            <div class="mb-3 col-12 col-md-auto text-center row d-flex justify-content-center">
                 <label> Описание фильма*:</label>
-                <textarea class="form-control w-50 text-center" name="descript" required id="descript"></textarea>
+                <textarea class="form-control w-75 d-flex" name="descript" required id="descript"></textarea>
             </div>
 
              <!-- button with submit -->
