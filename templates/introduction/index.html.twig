@@ -1,28 +1,17 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %} Hello {{controller_name}}{% endblock %}
 
-{% block body %}
 
-<!--<body style="background-image: url('./images/film.jpg'); background-size: 100%;">-->
-<body>
+
+{% block body %}
     <!-- block -->
     <form action="methods.php" class="form-inline p-5" method="post" enctype="multipart/form-data">
     <div class="container border border-dark" style="background-color: white;">
         <div class="row justify-content-center align-content-center text-center">
-        <div class="alert alert-primary d-flex text-center" role="alert">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-            </svg>
 
-            <!-- alert -->
-
-            <div class="text-center d-flex justify-content-center">
-              Заполните все необходимые поля, обозначенные символом "*"
-            </div>
-          </div>
-          
-        </div>
             <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center align-content-center">
 
             <!-- column1 -->
@@ -30,14 +19,14 @@
         <div class="col text-center">
 
             <!-- input with choosing file:  jpg/png  -->  
-            <label> Постер фильма*: </label> 
+            <label> {{ labe.poster }} </label> 
             <div class="mb-3 col-12 col-md-auto form-check-inline d-flex justify-content-center">
                 
                 <input class="form-control w-50 d-flex" id="posterimage" name="image" required type="file" accept=".jpg,.png">
             </div>
           
             <!--input with film name-->
-            <label> Название фильма*: </label>
+            <label> {{ labe.name }} </label>
             <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
                 
                 <input id="fname" class="form-control w-50 d-flex" name="fname" required type="text">
@@ -46,13 +35,13 @@
             <!-- chekbox: is film still on cinema -->
 
             <div class="mb-3 col-12 col-md-auto form-switch form-check-inline form-check">
-                <label class="form-check-label">- Сейчас в кинотеатрах?</label>
+                <label class="form-check-label">{{ labe.show }}</label>
                 <input type="checkbox" class="form-check-input d-flex" name="inthecinema" value="до сих пор показывают или ">
             </div>
             <br>
             
              <!-- checkboxes: where is film shown -->
-            <label> Показ: </label>
+            <label> {{ labe.where }} </label>
           <div class="mb-3 col-12 col-md-auto form-check-inline">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="tl" value=" Apollo Tallin, ">
@@ -72,7 +61,7 @@
              <!-- selection: film genre -->
 
             <div class="mb-3 col-12 col-md-auto">
-                <label> Жанр фильма: </label>
+                <label> {{ labe.zanr }} </label>
                 <label><select class="form-select text-center" name="Zanr">
                     <option id="hr" name="hr" value=" снимали в жанре Horror ">Хоррор</option>
                     <option id="bl" name="bl" value=" снимали в жанре Blockbuster ">Блокбастер</option>
@@ -89,18 +78,18 @@
 
 
              <!-- input with number type-->
-                <label> Кассовые сборы:</label>
+                <label> {{ labe.cash }} </label>
             <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
                 
                 <input class="form-control text-center w-50 d-flex" id="money" name="money" type="number" value="0">
             </div>
-            <label> Количество посетивших:</label>
+            <label> {{ labe.visit }} </label>
             <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
                 <input class="form-control text-center w-50 d-flex" id="views" name="views" type="number" value="0">
             </div>
 
             <!-- radio: film rating-->
-              <label> Рейтинг: </label>
+              <label> {{ labe.rate }} </label>
             <div class="mb-3 col-12 col-md-auto form-check-inline">
           <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="G" value=" с рейтингом G ">
@@ -122,7 +111,7 @@
 
              <!-- input with textarea: film description-->
             <div class="mb-3 col-12 col-md-auto text-center row d-flex justify-content-center">
-                <label> Описание фильма*:</label>
+                <label> {{ labe.descript }} </label>
                 <textarea class="form-control w-75 d-flex" name="descript" required id="descript"></textarea>
             </div>
 
@@ -137,5 +126,4 @@
         </div>
         </form>
     </div>
-    </body>
     {% endblock %}

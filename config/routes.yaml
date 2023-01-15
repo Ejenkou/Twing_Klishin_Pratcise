@@ -10,3 +10,10 @@ greetings:
 greetings2:
   path: /introduction
   controller: App\Controller\GreetingsController::index2
+
+greetings3:
+  path: /introduction
+  controller: App\Controller\GreetingsController::notif
+
+
+  
