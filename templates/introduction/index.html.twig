@@ -8,9 +8,19 @@
 
 {% block body %}
     <!-- block -->
+
+    {
+
     <form action="methods.php" class="form-inline p-5" method="post" enctype="multipart/form-data">
+
+    
+
     <div class="container border border-dark" style="background-color: white;">
         <div class="row justify-content-center align-content-center text-center">
+
+        <div class="alert">
+          {% include 'introduction/notif.html.twig' %}
+        </div>
 
             <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center align-content-center">
 
@@ -33,7 +43,6 @@
             </div>
 
             <!-- chekbox: is film still on cinema -->
-
             <div class="mb-3 col-12 col-md-auto form-switch form-check-inline form-check">
                 <label class="form-check-label">{{ labe.show }}</label>
                 <input type="checkbox" class="form-check-input d-flex" name="inthecinema" value="до сих пор показывают или ">
@@ -43,18 +52,10 @@
              <!-- checkboxes: where is film shown -->
             <label> {{ labe.where }} </label>
           <div class="mb-3 col-12 col-md-auto form-check-inline">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="tl" value=" Apollo Tallin, ">
-              <label class="form-check-label">Apollo Tallinn</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="jv" value=" Apollo Johvi, ">
-              <label class="form-check-label">Apollo Johvi</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="tr" value=" Apollo Tartu, ">
-              <label class="form-check-label">Apollo Tartu</label>
-            </div>
+            {% for list in checkbox.list %}
+            <input class="form-check-input" type="radio"  value="{{list}}" name="cinema">
+            <label >{{list}}</label>
+            {% endfor %} 
           </div>
             
 
@@ -92,20 +93,10 @@
               <label> {{ labe.rate }} </label>
             <div class="mb-3 col-12 col-md-auto form-check-inline">
           <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="G" value=" с рейтингом G ">
-              <label class="form-check-label">G</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="PG" value=" с рейтингом PG">
-              <label class="form-check-label">PG</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="PG-13" value=" с рейтингом PG-13 ">
-              <label class="form-check-label">PG-13</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="R" value=" с рейтингом R ">
-              <label class="form-check-label">R</label>
+               {% for list in radio.list %}
+            <input class="form-check-input" type="radio"  value="{{list}}" name="rating">
+            <label >{{list}}</label>
+            {% endfor %} 
             </div>
           </div>
 

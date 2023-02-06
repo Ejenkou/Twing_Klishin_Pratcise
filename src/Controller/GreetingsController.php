@@ -22,6 +22,8 @@ class GreetingsController extends AbstractController
             'descript' => 'Описание фильма*:'
         ];
 
+        
+
         return $this->render('introduction/index.html.twig', [
             'controller_name' => 'GreetingsController',
             'hello_world' => 'Hello World!!',
