@@ -10,26 +10,45 @@ class GreetingsController extends AbstractController
 {
     public function index(): Response
     {
-        $labe = [
-            'poster' => 'Постер фильма*:',
-            'name' => ' Название фильма*: ',
-            'show' => '- Сейчас в кинотеатрах?',
-            'where' => 'Показ: ',
-            'zanr' => ' Жанр фильма: ',
-            'cash' => 'Кассовые сборы:',
-            'visit' => 'Количество посетивших:',
-            'rate' => 'Рейтинг:',
-            'descript' => 'Описание фильма*:'
-        ];
-
-        
-
         return $this->render('introduction/index.html.twig', [
             'controller_name' => 'GreetingsController',
             'hello_world' => 'Hello World!!',
-            'labe' => $labe            
-        ]);
+            'labe' =>[
+                'poster' => 'Постер фильма*:',
+                'name' => ' Название фильма*: ',
+                'show' => '- Сейчас в кинотеатрах?',
+                'where' => 'Показ: ',
+                'zanr' => ' Жанр фильма: ',
+                'cash' => 'Кассовые сборы:',
+                'visit' => 'Количество посетивших:',
+                'rate' => 'Рейтинг:',
+                'descript' => 'Описание фильма*:',
+        ],
+        
+        'checkbox' => [
+                'list' => [
+                    'where1' => ' Apollo Tallin, ',
+                    'where2' => ' Apollo Johvi, ',
+                    'where3' => ' Apollo Tartu, '
+                ]
+                ],
+        'radio' => [
+                'list' => [
+                    'rate1' => ' G ',
+                    'rate2' => ' PG ',
+                    'rate3' => ' PG-13 ',
+                    'rate4' => ' R '
+                ]
+                ],
+
+                 
+                ]);
     }
+
+
+
+        
+  
 
     public function index2(): Response
     {

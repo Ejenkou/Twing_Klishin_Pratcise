@@ -53,7 +53,7 @@
             <label> {{ labe.where }} </label>
           <div class="mb-3 col-12 col-md-auto form-check-inline">
             {% for list in checkbox.list %}
-            <input class="form-check-input" type="radio"  value="{{list}}" name="cinema">
+            <input class="form-check-input" type="checkbox"  value="{{list}}" name="cinema">
             <label >{{list}}</label>
             {% endfor %} 
           </div>
@@ -92,13 +92,11 @@
             <!-- radio: film rating-->
               <label> {{ labe.rate }} </label>
             <div class="mb-3 col-12 col-md-auto form-check-inline">
-          <div class="form-check form-check-inline">
                {% for list in radio.list %}
             <input class="form-check-input" type="radio"  value="{{list}}" name="rating">
             <label >{{list}}</label>
-            {% endfor %} 
+                {% endfor %} 
             </div>
-          </div>
 
              <!-- input with textarea: film description-->
             <div class="mb-3 col-12 col-md-auto text-center row d-flex justify-content-center">
