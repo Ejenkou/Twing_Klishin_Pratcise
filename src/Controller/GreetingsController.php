@@ -41,6 +41,15 @@ class GreetingsController extends AbstractController
                 ]
                 ],
 
+        'select' => [
+                'list' => [
+                    'option1' => ' Horror ',
+                    'option2' => ' Blockbuster ',
+                    'option3' => ' Dramma ',
+                    'option4' => ' Comedy '
+                ]
+                ],
+
                  
                 ]);
     }

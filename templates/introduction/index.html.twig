@@ -63,11 +63,10 @@
 
             <div class="mb-3 col-12 col-md-auto">
                 <label> {{ labe.zanr }} </label>
-                <label><select class="form-select text-center" name="Zanr">
-                    <option id="hr" name="hr" value=" снимали в жанре Horror ">Хоррор</option>
-                    <option id="bl" name="bl" value=" снимали в жанре Blockbuster ">Блокбастер</option>
-                    <option id="dr" name="dr" value=" снимали в жанре Dramma ">Драма</option>
-                    <option id="cm" name="cm" value=" снимали в жанре Comedy">Комедия</option>
+                <label><select class="form-select text-center"  name="Zanr">
+                {% for list in select.list %}
+                     <option>{{list}}</option> 
+                {% endfor %}
                 </select>
                 </label>
             </div>
