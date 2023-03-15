@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class GreetingsController extends AbstractController
 {
@@ -59,19 +61,52 @@ class GreetingsController extends AbstractController
         
   
 
-    public function index2(): Response
-    {
-        return $this->render('introduction/index2.html.twig', [
-            'controller_name' => 'GreetingsController',
-            'hello_world' => 'Hello World!!'
+    public function answerForm(Request $request, SessionInterface $session){
+
+        $name = $request->get('name');
+        $show = $request->get('show');
+        $where = $request->get('where');
+        $zanr = $request->get('zanr');
+        $cash = $request ->get('cash');
+        $visit = $request ->get('visit');
+        $rate = $request ->get('rate');
+        $descript = $request ->get('descript');
+        $uploadfile = $request ->files->get('uploadfile');
+        
+        $session->set('form_data', [
+        'name'=> $name,
+        'show' => $show,
+        'where' => $where,
+        'zanr' => $zanr,
+        'cash' => $cash,
+        'visit' => $visit,
+        'rate' => $rate,
+        'descript' => $descript,
+        'file_name' => basename($uploadfile),
+        'file_size' => filesize($uploadfile)
+        ]); 
+
+        return $this->redirectToRoute('answer_list');
+}
+
+public function answer_list(SessionInterface $session): Response
+{
+    
+    $data  = $session -> get('form_data');
+
+    if (!$data) {
+        // Redirect to error page with error message
+        return $this->render('error.html.twig', [
+            'error_message' => 'Form data not found. Please submit the form first.',
         ]);
     }
 
-    public function notif(): Response
-    {
-        return $this->render('introduction/notif.html.twig', [
+
+    
+        return $this->render('introduction/answer_list.html.twig', [
             'controller_name' => 'GreetingsController',
-            'hello_world' => 'Hello World!!'
+            'hello_world' => 'Hello World!!',
+            'data' => $data
         ]);
     }
 }

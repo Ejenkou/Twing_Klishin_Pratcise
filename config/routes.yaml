@@ -6,6 +6,10 @@ greetings:
   path: /
   controller: App\Controller\GreetingsController::index
 
+answer_form:
+  path: /answer-form
+  controller: App\Controller\GreetingsController::answerForm
+
 
 greetings2:
   path: /introduction
@@ -14,6 +18,14 @@ greetings2:
 greetings3:
   path: /introduction
   controller: App\Controller\GreetingsController::notif
+
+error_page:
+    path: /error
+    controller: App\Controller\ErrorController::errorPage
+
+answer_list:
+  path: /show
+  controller: App\Controller\GreetingsController::answer_list
 
 
   
