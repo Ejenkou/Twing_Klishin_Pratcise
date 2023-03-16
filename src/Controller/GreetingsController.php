@@ -67,11 +67,11 @@ class GreetingsController extends AbstractController
         $show = $request->get('show');
         $where = $request->get('where');
         $zanr = $request->get('zanr');
-        $cash = $request ->get('cash');
-        $visit = $request ->get('visit');
-        $rate = $request ->get('rate');
-        $descript = $request ->get('descript');
-        $uploadfile = $request ->files->get('uploadfile');
+        $cash = $request->get('cash');
+        $visit = $request->get('visit');
+        $rate = $request->get('rate');
+        $descript = $request->get('descript');
+        $uploadfile = $request->files->get('uploadfile');
         
         $session->set('form_data', [
         'name'=> $name,
