@@ -45,7 +45,7 @@
             <!-- chekbox: is film still on cinema -->
             <div class="mb-3 col-12 col-md-auto form-switch form-check-inline form-check">
                 <label class="form-check-label">{{ labe.show }}</label>
-                <input type="checkbox" class="form-check-input d-flex" name="show" value="до сих пор показывают">
+                <input type="checkbox" class="form-check-input d-flex" name="show" >
             </div>
             <br>
             
@@ -53,7 +53,7 @@
             <label> {{ labe.where }} </label>
           <div class="mb-3 col-12 col-md-auto form-check-inline">
             {% for list in checkbox.list %}
-            <input class="form-check-input" type="checkbox"  value="{{list}}" name="where">
+            <input class="form-check-input" type="checkbox"  value="{{list}}" name="where[]">
             <label >{{list}}</label>
             {% endfor %} 
           </div>
@@ -92,7 +92,7 @@
               <label> {{ labe.rate }} </label>
             <div class="mb-3 col-12 col-md-auto form-check-inline">
                {% for list in radio.list %}
-            <input class="form-check-input" type="radio"  value="{{list}}" name="rate">
+            <input class="form-check-input" type="radio"  value="{{list}}" required name="rate">
             <label >{{list}}</label>
                 {% endfor %} 
             </div>

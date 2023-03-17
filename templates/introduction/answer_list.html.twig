@@ -3,19 +3,55 @@
 {% block title %} Hello {{controller_name}}{% endblock %}
 
 {% block body %}
-<h2>Информация:</h2>
-<p> Название фильма: {{data.name}}</p>
-<p> Фильм показывают в кинотеатрах? {{data.show}}</p>
-<p> Жанр фильма: {{data.zanr}}</p>
-<p> Фильм показывают в: {{data.where}}</p>
-<p> Кассовые сборы составили: {{data.cash}}</p>
-<p> Фильм посетило: {{data.visit}}</p>
-<p> Рейтинг фильма: {{data.rate}}</p>
-<p> Описание фильма: {{data.descript}}</p>
 
-<p>File name: {{data.file_name}} </p>
-<p> File size: {{data.file_size}} </p>
+    <div class="container border border-dark" style="background-color: white;">
+        <div class="row justify-content-center align-content-center text-center">
 
+        <div class="alert">
+          {% include 'introduction/info.html.twig' %}
+        </div>
+
+            <div class="row row-cols-1 d-flex justify-content-center align-content-center">
+
+            <!-- column1 -->
+
+        <div class="col text-center">
+          
+            <h3> Название фильма:</h3>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                <input id="fname" class="form-control w-50 d-flex text-center" placeholder="{{data.name}}">
+            </div>
+
+            <h3> {{data.show}} </h3>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                <input id="fname" class="form-control w-50 d-flex text-center" placeholder="{% for list in data.where %}{{list}},&nbsp;{%endfor%}">
+            </div>
+
+            <h3> Кассовые сборы составили:</h3>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                <input id="fname" class="form-control w-50 d-flex text-center" placeholder="{{data.cash}} долларов">
+            </div>
+
+            <h3> Фильм посетило: </h3>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                <input id="fname" class="form-control w-50 d-flex text-center" placeholder="{{data.cash}} человек">
+            </div>
+
+            <h3> Рейтинг фильма: </h3>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                <input id="fname" class="form-control w-50 d-flex text-center" placeholder="{{data.rate}}">
+            </div>
+
+            <h3> Описание фильма: </h3>
+            <div class="mb-3 col-12 col-md-auto d-flex justify-content-center">
+                <input id="fname" class="form-control w-50 d-flex text-center" placeholder="{{data.descript}}">
+            </div>
+
+            
+
+        </div>
+
+        
 
 {% endblock %}
 

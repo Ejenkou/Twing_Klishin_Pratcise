@@ -23,15 +23,15 @@ class GreetingsController extends AbstractController
                 'zanr' => ' Жанр фильма: ',
                 'cash' => 'Кассовые сборы:',
                 'visit' => 'Количество посетивших:',
-                'rate' => 'Рейтинг:',
+                'rate' => 'Рейтинг*:',
                 'descript' => 'Описание фильма*:',
         ],
         
         'checkbox' => [
                 'list' => [
-                    'where1' => ' Apollo Tallin, ',
-                    'where2' => ' Apollo Johvi, ',
-                    'where3' => ' Apollo Tartu, '
+                    'where1' => 'Apollo Tallin',
+                    'where2' => 'Apollo Johvi',
+                    'where3' => 'Apollo Tartu'
                 ]
                 ],
         'radio' => [
@@ -64,7 +64,7 @@ class GreetingsController extends AbstractController
     public function answerForm(Request $request, SessionInterface $session){
 
         $name = $request->get('name');
-        $show = $request->get('show');
+        $show = ($request->get('show')==TRUE)?"фильм показывают в кинотетрах:":"фильм не показывают в кинотетрах";
         $where = $request->get('where');
         $zanr = $request->get('zanr');
         $cash = $request->get('cash');
